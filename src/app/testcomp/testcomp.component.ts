@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Docs } from '../testcom.reducer';
 
 @Component({
   selector: 'test-comp',
@@ -19,6 +22,11 @@ export class TestCompComponent {
 
     // Reset the form after saving the data
     this.formData = {};
+  }
+  docsData$: Observable<number>;
+
+  constructor(private store: Store<{ docsData: Docs }>) {
+    this.docsData$ = store.pipe(select('test'));
   }
 }
 

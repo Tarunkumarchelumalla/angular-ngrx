@@ -5,14 +5,17 @@ import { AppComponent } from './app.component';
 
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './counter.reducer';
+
 import { MyCounterComponent } from './my-counter/my-counter.component';
 import { TestCompComponent } from './testcomp/testcomp.component';
+import { testReducer } from './testcom.reducer';
 @NgModule({
   declarations: [AppComponent, MyCounterComponent, TestCompComponent],
   imports: [
     BrowserModule,
     StoreModule.forRoot({
-       count: counterReducer,
+      count: counterReducer,
+      // test: testReducer,
     }),
     FormsModule,
   ],
