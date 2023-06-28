@@ -14,8 +14,8 @@ import { testReducer } from './testcom.reducer';
   imports: [
     BrowserModule,
     StoreModule.forRoot({
-      count: counterReducer,
-      // test: testReducer,
+      // count: counterReducer,
+      test: testReducer,
     }),
     FormsModule,
   ],
